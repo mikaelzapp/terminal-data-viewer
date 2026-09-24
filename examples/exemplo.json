@@ -1,0 +1,21 @@
+{
+  "CPF": "00540964212",
+  "NOME": "NATHALIA JANAINA COELHO",
+  "DT_NASCIMENTO": "1990-12-23",
+  "SEXO": "F",
+  "STATUS_RECEITA_FEDERAL": "REGULAR",
+  "ENDERECOS": {
+    "QTD": 2,
+    "DADOS": [
+      {"LOGRADOURO": "Nossa Senhora do Caravagio", "NUMERO": 203, "BAIRRO": "Morro do Meio", "CIDADE": "Joinville", "UF": "SC", "CEP": "89215178"},
+      {"LOGRADOURO": "Hernani Moraes", "NUMERO": 11, "COMPLEMENTO": "Pq Manoel Pantoja", "BAIRRO": "Curucamba", "CIDADE": "Ananindeua", "UF": "PA", "CEP": "67030000"}
+    ]
+  },
+  "VINCULOS": [
+    {"RAZAO_SOCIAL": "2 RIOS MODA INTIMA", "CNPJ": "82184821000190", "OCUPACAO_CBO": "Costureiro na confecção em série", "DT_ADMISSAO": "2024-07-08", "VINCULO_ATIVO": "Sim", "SALARIO": 2100, "ULTIMO_SALARIO": 2391.67, "HORAS_CONTRATADAS": 44, "TIPO_VINCULO": "CLT urbano"}
+  ],
+  "INDICADORES_RENDA": {"RENDA_ATUAL": 2391.67, "TENDENCIA": "CRESCIMENTO"},
+  "INTERESSES_PESSOAIS": {"Banda larga fixa": true, "Crédito imobiliário": false, "Cinéfilo": true, "Internet banking": true},
+  "VEICULOS": {"QTD": 0, "DADOS": []},
+  "DIVIDA_ATIVA": {"POSSUI": false, "QTD": 0}
+}

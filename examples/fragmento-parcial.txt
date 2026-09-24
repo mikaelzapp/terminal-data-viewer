@@ -1,0 +1,17 @@
+"NATUREZA_JURIDICA": "2062 - Sociedade Empresária Limitada",
+"MUNICIPIO": "420910 - Joinville/SC",
+"VINCULO_ATIVO": "Não",
+"SALARIO_CONTRATADO": 1942.60
+},
+{
+  "NOME": "PESSOA DE EXEMPLO",
+  "CPF": "00000000000",
+  "VINCULO_ATIVO": "Sim",
+  "SALARIO_CONTRATADO": 2500
+}
+]
+},
+"INDICADORES_RENDA": {
+  "RENDA_ATUAL": 2500
+}
+}
