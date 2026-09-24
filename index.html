@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Terminal Data Viewer</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="terminal-header shell-box">
+    <pre class="ascii-title" aria-label="Terminal Data Viewer">
+╔══════════════════════════════════════════════════════════════╗
+║                    TERMINAL DATA VIEWER                     ║
+║                    DATA INTELLIGENCE                        ║
+╚══════════════════════════════════════════════════════════════╝</pre>
+    <div class="boot-status" id="bootStatus" aria-live="polite"></div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="sidebar shell-box" id="sidebar">
+      <div class="sidebar-title">[ NAVIGATION ]</div>
+      <nav id="sectionNav" class="section-nav" aria-label="Navegação por seções">
+        <button data-target="inputPanel">[0] ENTRADA</button>
+      </nav>
+      <div class="sidebar-meta" id="datasetMeta">
+        <div>STATUS: <span class="muted">SEM DADOS</span></div>
+        <div>OBJECTS: 0</div>
+        <div>RECORDS: 0</div>
+      </div>
+    </aside>
+
+    <section class="content-column">
+      <section id="inputPanel" class="shell-box input-panel">
+        <div class="section-heading">[-] ENTRADA DE DADOS</div>
+
+        <div class="toolbar wrap">
+          <label class="file-button">
+            [ ABRIR ARQUIVO ]
+            <input id="fileInput" type="file" accept=".json,.txt,application/json,text/plain" />
+          </label>
+          <button id="processBtn" class="primary">[ PROCESSAR JSON ]</button>
+          <button id="clearBtn">[ LIMPAR ]</button>
+        </div>
+
+        <div id="dropZone" class="drop-zone" tabindex="0">
+          ARRASTE UM ARQUIVO .JSON OU .TXT AQUI
+        </div>
+
+        <label for="jsonInput" class="prompt-label">&gt; input:</label>
+        <textarea id="jsonInput" spellcheck="false" placeholder='"'"'Cole qualquer JSON aqui. JSON parcial também é aceito, por exemplo:
+
+"NOME": "ANA",
+"CPF": "12345678900"'"'"'></textarea>
+
+        <div class="options-row">
+          <label class="toggle"><input id="maskToggle" type="checkbox" /> <span>[ ] MASCARAR DADOS SENSÍVEIS</span></label>
+          <span id="localOnlyBadge" class="privacy-badge">LOCAL ONLY · ZERO UPLOAD</span>
+        </div>
+
+        <div id="correctionNotice" class="correction-notice hidden"></div>
+        <div id="parseError" class="error-box hidden" role="alert"></div>
+      </section>
+
+      <section id="workspace" class="hidden">
+        <section class="shell-box control-bar">
+          <label for="searchInput" class="prompt-label">&gt; search:</label>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Digite um campo ou valor..." />
+          <div class="toolbar wrap">
+            <button id="expandAllBtn">[ EXPANDIR TUDO ]</button>
+            <button id="collapseAllBtn">[ RECOLHER TUDO ]</button>
+            <button id="copyReportBtn">[ COPIAR RELATÓRIO ]</button>
+            <button id="exportTxtBtn">[ EXPORTAR TXT ]</button>
+            <button id="exportJsonBtn">[ EXPORTAR JSON ORIGINAL ]</button>
+            <button id="exportHtmlBtn">[ EXPORTAR HTML ]</button>
+          </div>
+          <div id="searchStatus" class="search-status"></div>
+        </section>
+
+        <section id="summaryPanel" class="shell-box summary-panel"></section>
+        <section id="renderRoot" class="render-root"></section>
+      </section>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="js/parser.js"></script>
+  <script src="js/normalizer.js"></script>
+  <script src="js/formatter.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/exporter.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
